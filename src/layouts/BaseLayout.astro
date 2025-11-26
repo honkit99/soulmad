@@ -1,0 +1,40 @@
+---
+import '@styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Soulmad - Built with Astro' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title} | Soulmad</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --color-primary: #6366f1;
+    --color-text: #1f2937;
+    --color-bg: #ffffff;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-text: #f3f4f6;
+      --color-bg: #111827;
+    }
+  }
+</style>

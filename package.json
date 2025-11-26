@@ -1,0 +1,44 @@
+{
+  "name": "soulmad",
+  "version": "1.0.0",
+  "description": "Soulmad - Built with Astro",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "lint": "eslint . --ext .js,.ts,.astro",
+    "lint:fix": "eslint . --ext .js,.ts,.astro --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepare": "husky"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "astro": "^5.16.1"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.6",
+    "@typescript-eslint/eslint-plugin": "^8.48.0",
+    "@typescript-eslint/parser": "^8.48.0",
+    "eslint": "^9.39.1",
+    "eslint-plugin-astro": "^1.5.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "prettier": "^3.6.2",
+    "prettier-plugin-astro": "^0.14.1",
+    "typescript": "^5.9.3"
+  },
+  "lint-staged": {
+    "*.{js,ts,astro}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,css}": [
+      "prettier --write"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__astro-docs__search_astro_docs",
+      "WebSearch",
+      "Bash(mkdir:*)",
+      "Bash(git init:*)",
+      "Bash(npm create:*)",
+      "Bash(npm init:*)",
+      "Bash(npm install:*)",
+      "Bash(npx husky init)",
+      "Bash(npm run build:*)",
+      "Bash(npm run format:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
