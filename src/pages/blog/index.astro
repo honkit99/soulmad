@@ -97,7 +97,7 @@ function getSlug(id: string) {
 
       <div class="posts-grid">
         {
-          posts.map((post: CollectionEntry<'blog'>, index: number) => (
+          posts.map((post, index) => (
             <article class="post-card" style={`--delay: ${index * 0.1}s`}>
               <div class="post-card-inner">
                 <div class="post-card-glow" />
