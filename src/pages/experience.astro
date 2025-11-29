@@ -1,0 +1,579 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Experience Soulmad"
+  description="A cinematic journey through the world of Soulmad Board Game Shop."
+>
+  <div class="smooth-wrapper" id="smooth-wrapper">
+    <div class="smooth-content" id="smooth-content">
+      <!-- SECTION 1: HERO -->
+      <section class="panel hero" id="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+          <h1 class="hero-title">
+            <div class="line">Roll</div>
+            <div class="line">The</div>
+            <div class="line accent">Dice</div>
+          </h1>
+          <p class="hero-subtitle">Enter the world of Soulmad</p>
+          <div class="scroll-indicator">
+            <span>Scroll to Explore</span>
+            <div class="line-down"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: INTRO (Horizontal Scroll) -->
+      <section class="panel intro" id="intro">
+        <div class="intro-container">
+          <div class="intro-text">
+            <h2>
+              More Than Just<br /><span class="outline">A Game Shop</span>
+            </h2>
+            <p>
+              We are a community. A sanctuary for strategists. A playground for
+              imagination.
+            </p>
+          </div>
+          <div class="intro-gallery">
+            <div class="gallery-item item-1"></div>
+            <div class="gallery-item item-2"></div>
+            <div class="gallery-item item-3"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: THE CATS -->
+      <section class="panel cats" id="cats">
+        <div class="cats-content">
+          <h2>Meet Our <span class="fuzzy">Fuzzy</span> Overlords</h2>
+          <p>
+            They judge your moves. They knock over your meeples. We love them
+            anyway.
+          </p>
+        </div>
+        <div class="cat-container">
+          <!-- CSS/SVG Cat Elements will go here -->
+          <div class="cat cat-1">
+            <div class="cat-body"></div>
+            <div class="cat-head">
+              <div class="cat-ears"></div>
+              <div class="cat-face"></div>
+            </div>
+            <div class="cat-tail"></div>
+          </div>
+          <div class="cat cat-2">
+            <div class="cat-body"></div>
+            <div class="cat-head"></div>
+            <div class="cat-tail"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: GAMES (Card Stack) -->
+      <section class="panel games" id="games">
+        <div class="games-header">
+          <h2>Our Collection</h2>
+        </div>
+        <div class="cards-stack">
+          <div class="card card-1">
+            <h3>Strategy</h3>
+            <p>Catan, Wingspan, Scythe</p>
+          </div>
+          <div class="card card-2">
+            <h3>Party</h3>
+            <p>Codenames, Dixit, Monikers</p>
+          </div>
+          <div class="card card-3">
+            <h3>Co-op</h3>
+            <p>Pandemic, Spirit Island</p>
+          </div>
+          <div class="card card-4">
+            <h3>Family</h3>
+            <p>Ticket to Ride, Carcassonne</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5: LOCATIONS & FOOTER -->
+      <section class="panel locations" id="locations">
+        <div class="split-screen">
+          <div class="split left">
+            <div class="split-content">
+              <h3>Soulmad Central</h3>
+              <p>Downtown</p>
+              <a href="#" class="btn">Visit</a>
+            </div>
+          </div>
+          <div class="split right">
+            <div class="split-content">
+              <h3>Soulmad Corner</h3>
+              <p>Suburbs</p>
+              <a href="#" class="btn">Visit</a>
+            </div>
+          </div>
+        </div>
+        <footer class="cinematic-footer">
+          <p>Soulmad &copy; 2025</p>
+        </footer>
+      </section>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  :root {
+    --bg-color: #0a0a0a;
+    --text-color: #f0f0f0;
+    --accent-color: #e63946;
+    --cat-color: #f4a261;
+  }
+
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden; /* Hide scrollbar for custom scroll */
+  }
+
+  .panel {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  /* HERO */
+  .hero {
+    background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
+    z-index: 10;
+  }
+
+  .hero-title {
+    font-size: 10vw;
+    line-height: 0.9;
+    text-transform: uppercase;
+    font-weight: 900;
+    text-align: center;
+    perspective: 1000px;
+  }
+
+  .hero-title .line {
+    display: block;
+    opacity: 0; /* Hidden initially for GSAP */
+    transform: translateY(50px) rotateX(20deg);
+  }
+
+  .hero-title .accent {
+    color: transparent;
+    -webkit-text-stroke: 2px var(--accent-color);
+    position: relative;
+  }
+
+  .hero-title .accent::before {
+    content: 'Dice';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    color: var(--accent-color);
+    overflow: hidden;
+    transition: width 0.5s;
+    -webkit-text-stroke: 0;
+  }
+
+  .hero-subtitle {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    opacity: 0;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    opacity: 0;
+  }
+
+  .line-down {
+    width: 1px;
+    height: 60px;
+    background: var(--text-color);
+  }
+
+  /* INTRO */
+  .intro {
+    background-color: #111;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden; /* Important for horizontal scroll */
+  }
+
+  .intro-container {
+    display: flex;
+    width: 300vw; /* Horizontal scroll width */
+    height: 100%;
+    align-items: center;
+    padding-left: 10vw;
+  }
+
+  .intro-text {
+    width: 80vw;
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.1;
+    padding-right: 5rem;
+  }
+
+  .intro-text .outline {
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+  }
+
+  .intro-gallery {
+    display: flex;
+    gap: 5vw;
+  }
+
+  .gallery-item {
+    width: 40vw;
+    height: 60vh;
+    background-color: #333;
+    border-radius: 20px;
+    flex-shrink: 0;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .item-1 {
+    background-image: linear-gradient(45deg, #333, #444);
+  }
+  .item-2 {
+    background-image: linear-gradient(45deg, #444, #555);
+  }
+  .item-3 {
+    background-image: linear-gradient(45deg, #555, #666);
+  }
+
+  /* CATS */
+  .cats {
+    background-color: #fdfcdc;
+    color: #333;
+  }
+
+  .cats-content {
+    text-align: center;
+    z-index: 2;
+  }
+
+  .cats-content h2 {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+  }
+
+  .fuzzy {
+    color: var(--cat-color);
+    font-family: 'Comic Sans MS', cursive; /* Playful font */
+    font-style: italic;
+  }
+
+  .cat-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .cat {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: var(--cat-color);
+    border-radius: 50%;
+  }
+
+  .cat-1 {
+    top: 20%;
+    left: 10%;
+  }
+
+  .cat-2 {
+    bottom: 20%;
+    right: 10%;
+    background: #333;
+  }
+
+  /* GAMES */
+  .games {
+    background-color: #0f0f0f;
+    perspective: 1000px;
+  }
+
+  .cards-stack {
+    position: relative;
+    width: 300px;
+    height: 400px;
+  }
+
+  .card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    color: black;
+    border-radius: 15px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transform-origin: center bottom;
+  }
+
+  .card:nth-child(1) {
+    background: #ffbe0b;
+    z-index: 4;
+  }
+  .card:nth-child(2) {
+    background: #fb5607;
+    z-index: 3;
+  }
+  .card:nth-child(3) {
+    background: #ff006e;
+    z-index: 2;
+  }
+  .card:nth-child(4) {
+    background: #8338ec;
+    z-index: 1;
+    color: white;
+  }
+
+  /* LOCATIONS */
+  .locations {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .split-screen {
+    display: flex;
+    width: 100%;
+    height: 90%;
+  }
+
+  .split {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: flex 0.5s ease;
+    overflow: hidden;
+  }
+
+  .split.left {
+    background: #1a1a1a;
+    border-right: 1px solid #333;
+  }
+  .split.right {
+    background: #222;
+  }
+
+  .split:hover {
+    flex: 1.5;
+  }
+
+  .split-content {
+    text-align: center;
+    z-index: 2;
+  }
+
+  .cinematic-footer {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    border-top: 1px solid #333;
+  }
+
+  .btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    border: 1px solid white;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s;
+  }
+
+  .btn:hover {
+    background: white;
+    color: black;
+  }
+</style>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Wait for DOM
+  document.addEventListener('DOMContentLoaded', () => {
+    // HERO ANIMATION
+    const heroTl = gsap.timeline();
+
+    heroTl
+      .to('.hero-title .line', {
+        y: 0,
+        rotationX: 0,
+        opacity: 1,
+        duration: 1.5,
+        stagger: 0.2,
+        ease: 'power4.out',
+      })
+      .to(
+        '.hero-title .accent',
+        {
+          '--width': '100%', // We'll need to animate CSS variable or width directly
+          duration: 1,
+        },
+        '-=0.5'
+      )
+      .to(
+        '.hero-subtitle',
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+        },
+        '-=1'
+      )
+      .to(
+        '.scroll-indicator',
+        {
+          opacity: 1,
+          duration: 1,
+        },
+        '-=0.5'
+      );
+
+    // Parallax Hero
+    gsap.to('.hero-content', {
+      scrollTrigger: {
+        trigger: '.hero',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true,
+      },
+      y: 200,
+      opacity: 0,
+    });
+
+    // INTRO HORIZONTAL SCROLL
+    const introSection = document.querySelector('.intro');
+    const introContainer = document.querySelector('.intro-container');
+
+    if (introSection && introContainer) {
+      gsap.to(introContainer, {
+        x: () => -(introContainer.scrollWidth - window.innerWidth),
+        ease: 'none',
+        scrollTrigger: {
+          trigger: introSection,
+          pin: true,
+          scrub: 1,
+          end: () => '+=' + introContainer.scrollWidth,
+        },
+      });
+    }
+
+    // CATS ANIMATION
+    gsap.from('.cat-1', {
+      scrollTrigger: {
+        trigger: '.cats',
+        start: 'top center',
+        end: 'bottom center',
+        scrub: 1,
+      },
+      y: 300,
+      rotation: -20,
+    });
+
+    gsap.from('.cat-2', {
+      scrollTrigger: {
+        trigger: '.cats',
+        start: 'top center',
+        end: 'bottom center',
+        scrub: 1.5,
+      },
+      y: -200,
+      x: 100,
+      rotation: 20,
+    });
+
+    // GAMES CARD STACK
+    const cards = gsap.utils.toArray('.card');
+
+    ScrollTrigger.create({
+      trigger: '.games',
+      start: 'top top',
+      end: '+=2000', // Pin for a while
+      pin: true,
+      scrub: true,
+      onUpdate: (self) => {
+        // Logic to fan out cards or cycle them
+        const progress = self.progress;
+        const totalCards = cards.length;
+        const step = 1 / totalCards;
+
+        cards.forEach((card: any, i) => {
+          // Simple fanning effect
+          // gsap.to(card, {
+          //    rotation: (i - totalCards/2) * 10 * progress,
+          //    x: (i - totalCards/2) * 50 * progress
+          // });
+        });
+      },
+      animation: gsap
+        .timeline()
+        .to('.card-1', { x: -300, rotation: -10, opacity: 0 })
+        .to('.card-2', { x: 300, rotation: 10, opacity: 0 })
+        .to('.card-3', { y: -300, opacity: 0 }),
+      // Card 4 stays
+    });
+
+    // LOCATIONS REVEAL
+    gsap.from('.split', {
+      scrollTrigger: {
+        trigger: '.locations',
+        start: 'top 80%',
+      },
+      y: 100,
+      opacity: 0,
+      stagger: 0.2,
+      duration: 1,
+    });
+  });
+</script>
