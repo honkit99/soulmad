@@ -1,0 +1,1482 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Soulmad | Vintage Arcade Edition"
+  description="Roll the dice. Feed the cat. A vintage arcade experience."
+>
+  <!-- Global Noise -->
+  <div class="noise-overlay"></div>
+
+  <!-- Navigation -->
+  <nav class="vintage-nav">
+    <div class="pixel-font">SOULMAD.EXE</div>
+    <div class="nav-links">
+      <a href="#story">Story</a>
+      <a href="#experience">Vibe</a>
+      <a href="#games">Games</a>
+      <a href="#visit">Visit</a>
+    </div>
+    <button class="nav-btn">Start Game</button>
+  </nav>
+
+  <!-- SECTION 1: HERO (Mouse Parallax) -->
+  <section id="hero" class="hero-section">
+    <!-- Layer 1: Background Pattern -->
+    <div class="parallax-layer" data-speed="0.02">
+      <div class="pattern-bg"></div>
+    </div>
+
+    <!-- Layer 2: Floating Cards (Back) -->
+    <div class="parallax-layer" data-speed="0.05">
+      <i class="fas fa-chess-board floating-icon icon-1"></i>
+      <i class="fas fa-puzzle-piece floating-icon icon-2"></i>
+    </div>
+
+    <!-- Layer 3: Main Elements (Mid) -->
+    <div class="parallax-layer" data-speed="0.1">
+      <div class="floating-card card-dice">
+        <i class="fas fa-dice-d20"></i>
+      </div>
+      <div class="floating-card card-cat">
+        <i class="fas fa-cat"></i>
+      </div>
+    </div>
+
+    <!-- Layer 4: Text (Front) -->
+    <div class="parallax-layer hero-text" data-speed="0.15">
+      <div class="hero-content">
+        <h1>SOULMAD</h1>
+        <div class="hero-tagline pixel-font">ROLL THE DICE. FEED THE CAT.</div>
+      </div>
+    </div>
+
+    <!-- Layer 5: Foreground -->
+    <div class="parallax-layer" data-speed="0.25">
+      <div class="foreground-blur"></div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: OUR STORY (Horizontal Pin) -->
+  <section id="story-wrapper" class="story-wrapper">
+    <div id="story-track" class="story-track">
+      <!-- Panel 1: Intro -->
+      <div class="story-panel panel-1">
+        <div class="panel-bg"></div>
+        <div class="panel-content">
+          <div class="pixel-font panel-level">LEVEL 1</div>
+          <h2>Origins</h2>
+          <p>
+            It started with a single d20 and a stray cat. We wanted a place
+            where analog connection met cozy chaos.
+          </p>
+        </div>
+      </div>
+
+      <!-- Panel 2: Community -->
+      <div class="story-panel panel-2">
+        <div class="panel-pattern"></div>
+        <div class="panel-content panel-community">
+          <img
+            src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?q=80&w=2730&auto=format&fit=crop"
+            alt="Players"
+            class="community-img"
+          />
+          <div class="community-text">
+            <div class="pixel-font panel-level">LEVEL 2</div>
+            <h2>The Guild</h2>
+            <p>
+              From strangers to party members. Our tables have forged thousands
+              of friendships over victory points and coffee.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 3: Philosophy -->
+      <div class="story-panel panel-3">
+        <div class="panel-content panel-philosophy">
+          <i class="fas fa-heart philosophy-icon"></i>
+          <h2>Unplugged</h2>
+          <p class="pixel-font philosophy-tagline">
+            NO WIFI PASSWORDS. JUST EYE CONTACT.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: THE EXPERIENCE (Floating Grid) -->
+  <section id="experience" class="experience-section">
+    <div class="section-header">
+      <h2>The Vibe</h2>
+      <p class="section-subtitle">SCROLL TO EXPLORE THE SANCTUARY</p>
+    </div>
+
+    <div class="experience-grid">
+      <!-- Column 1 -->
+      <div class="experience-col" data-speed="1.1">
+        <div class="exp-item exp-img">
+          <img
+            src="https://images.unsplash.com/photo-1606167668584-78701c57f13d?q=80&w=2070&auto=format&fit=crop"
+            alt="Game Night"
+          />
+        </div>
+        <div class="exp-item exp-quote">
+          <span class="pixel-font"
+            >"Best place to lose friends over Monopoly."</span
+          >
+        </div>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="experience-col col-offset" data-speed="0.8">
+        <div class="exp-item exp-img">
+          <img
+            src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2071&auto=format&fit=crop"
+            alt="Cafe"
+          />
+        </div>
+        <div class="exp-item exp-img exp-red">
+          <img
+            src="https://images.unsplash.com/photo-1574144611937-0df059b5ef3e?q=80&w=2070&auto=format&fit=crop"
+            alt="Cat"
+          />
+        </div>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="experience-col col-top" data-speed="1.3">
+        <div class="exp-item exp-icon">
+          <i class="fas fa-coffee"></i>
+        </div>
+        <div class="exp-item exp-img">
+          <img
+            src="https://images.unsplash.com/photo-1632501641765-e568d28b0015?q=80&w=1974&auto=format&fit=crop"
+            alt="Shelf"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: GAME COLLECTIONS (Filter & Grid) -->
+  <section id="games" class="games-section">
+    <div class="games-header">
+      <h2>The Armory</h2>
+      <div class="games-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="strategy">Strategy</button>
+        <button class="filter-btn" data-filter="party">Party</button>
+        <button class="filter-btn" data-filter="cats">Cats</button>
+      </div>
+    </div>
+
+    <div class="games-grid">
+      <!-- Game Item 1 -->
+      <div class="game-item strategy">
+        <div class="game-card">
+          <img
+            src="https://images.unsplash.com/photo-1611371805429-923c89fb13b2?q=80&w=1974&auto=format&fit=crop"
+            alt="Catan"
+          />
+          <div class="game-tag pixel-font">STRATEGY</div>
+        </div>
+        <h3>Settlers of Catan</h3>
+        <p>Trade wood for sheep.</p>
+      </div>
+
+      <!-- Game Item 2 -->
+      <div class="game-item party">
+        <div class="game-card">
+          <img
+            src="https://images.unsplash.com/photo-1505685679686-2490cab6217d?q=80&w=2070&auto=format&fit=crop"
+            alt="Uno"
+          />
+          <div class="game-tag game-tag-party pixel-font">PARTY</div>
+        </div>
+        <h3>Uno Flip</h3>
+        <p>Ruining friendships since 1971.</p>
+      </div>
+
+      <!-- Game Item 3 -->
+      <div class="game-item cats">
+        <div class="game-card">
+          <img
+            src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?q=80&w=1974&auto=format&fit=crop"
+            alt="Cat Lady"
+          />
+          <div class="game-tag game-tag-cats pixel-font">CATS</div>
+        </div>
+        <h3>Exploding Kittens</h3>
+        <p>Strategic kitten avoidance.</p>
+      </div>
+
+      <!-- Game Item 4 -->
+      <div class="game-item strategy">
+        <div class="game-card game-card-cta">
+          <i class="fas fa-plus"></i>
+          <span class="pixel-font">VIEW FULL LIBRARY</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: YOUR VISIT (Info) -->
+  <section id="visit" class="visit-section">
+    <div class="visit-container">
+      <div class="visit-info">
+        <h2>Drop In</h2>
+
+        <div class="info-items">
+          <div class="info-item">
+            <i class="fas fa-clock"></i>
+            <div>
+              <strong>Open Hours</strong>
+              <p>Tue-Thu: 12PM - 11PM</p>
+              <p>Fri-Sun: 12PM - 1AM</p>
+              <p>Mon: Closed</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <strong>Location</strong>
+              <p>123 Meeple Street,</p>
+              <p>Downtown Kuala Lumpur</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <i class="fas fa-tag"></i>
+            <div>
+              <strong>Pricing</strong>
+              <p>RM 15 / Entry (Unlimited Play)</p>
+              <p>RM 10 / Student</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="visit-map">
+        <div class="map-pattern"></div>
+        <div class="map-icon-wrapper">
+          <i class="fas fa-map-marked-alt"></i>
+        </div>
+        <div class="map-cta pixel-font">GET DIRECTIONS {'->'}</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: JOIN WORLD (Community) -->
+  <section class="community-section">
+    <i class="fas fa-dice-d20 community-icon"></i>
+    <h2>JOIN THE PARTY</h2>
+
+    <div class="social-links">
+      <a href="#" class="social-btn social-instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="#" class="social-btn social-tiktok">
+        <i class="fab fa-tiktok"></i>
+      </a>
+      <a href="#" class="social-btn social-discord">
+        <i class="fab fa-discord"></i>
+      </a>
+    </div>
+
+    <p class="pixel-font copyright">
+      © 2025 SOULMAD. INSERT COIN TO CONTINUE.
+    </p>
+  </section>
+
+  <!-- THE RUNNING PET -->
+  <div id="running-pet-container">
+    <svg
+      width="60"
+      height="60"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      id="pet-svg"
+    >
+      <path
+        d="M4 16V20H8V22H12V20H16V22H20V16H22V10H20V8H18V6H14V8H12V4H8V6H6V8H4V10H2V16H4ZM10 12H8V14H10V12ZM16 12H14V14H16V12Z"
+        fill="#C84630"></path>
+    </svg>
+  </div>
+</BaseLayout>
+
+<style>
+  :root {
+    --c-cream: #f3e9d2;
+    --c-dark: #1a1a1a;
+    --c-red: #c84630;
+    --c-gold: #d4a373;
+    --c-blue: #588157;
+    --font-pixel: 'Press Start 2P', cursive;
+    --font-serif: 'DM Serif Display', serif;
+    --font-mono: 'Space Mono', monospace;
+  }
+
+  :global(body) {
+    background-color: var(--c-cream);
+    color: var(--c-dark);
+    font-family: var(--font-mono);
+    overflow-x: hidden;
+    margin: 0;
+  }
+
+  /* Grain Texture Overlay */
+  .noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+
+  /* Typography */
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-serif);
+  }
+
+  .pixel-font {
+    font-family: var(--font-pixel);
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--c-cream);
+    border-left: 1px solid var(--c-dark);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--c-dark);
+    border: 2px solid var(--c-cream);
+  }
+
+  /* ============================================ */
+  /* NAVIGATION - Mobile First */
+  /* ============================================ */
+  .vintage-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 50;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid black;
+    background-color: rgba(243, 233, 210, 0.9);
+    backdrop-filter: blur(8px);
+  }
+
+  .vintage-nav .pixel-font {
+    font-size: 0.5rem;
+    letter-spacing: -0.05em;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-btn {
+    border: 2px solid black;
+    padding: 0.5rem 1rem;
+    font-size: 0.625rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .nav-btn:hover {
+    background: black;
+    color: var(--c-cream);
+  }
+
+  @media (min-width: 768px) {
+    .vintage-nav {
+      padding: 1rem 1.5rem;
+    }
+
+    .vintage-nav .pixel-font {
+      font-size: 0.75rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      font-weight: bold;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .nav-links a {
+      color: var(--c-dark);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--c-red);
+    }
+
+    .nav-btn {
+      padding: 0.5rem 1rem;
+      font-size: 0.75rem;
+    }
+  }
+
+  /* ============================================ */
+  /* SECTION 1: HERO - Mobile First */
+  /* ============================================ */
+  .hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: var(--c-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 4px solid black;
+  }
+
+  .parallax-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+  .pattern-bg {
+    width: 110%;
+    height: 110%;
+    background-image: url('https://www.transparenttextures.com/patterns/notebook.png');
+    opacity: 0.5;
+  }
+
+  .floating-icon {
+    position: absolute;
+    font-size: 3rem;
+    color: black;
+    opacity: 0.1;
+  }
+
+  .icon-1 {
+    top: 10%;
+    left: 10%;
+    transform: rotate(12deg);
+  }
+
+  .icon-2 {
+    bottom: 15%;
+    right: 15%;
+    transform: rotate(-12deg);
+  }
+
+  .floating-card {
+    position: absolute;
+    border: 4px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.2);
+  }
+
+  .card-dice {
+    top: 20%;
+    left: 5%;
+    width: 5rem;
+    height: 7rem;
+    background: white;
+    transform: rotate(-6deg);
+  }
+
+  .card-dice i {
+    font-size: 2rem;
+  }
+
+  .card-cat {
+    bottom: 15%;
+    right: 5%;
+    width: 6rem;
+    height: 6rem;
+    background: var(--c-red);
+    border-radius: 50%;
+    transform: rotate(3deg);
+  }
+
+  .card-cat i {
+    font-size: 2.5rem;
+    color: white;
+  }
+
+  .hero-text {
+    z-index: 10;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 15vw;
+    line-height: 1;
+    color: black;
+    text-shadow: 10px 10px 0px rgba(255, 255, 255, 0.5);
+    margin: 0;
+  }
+
+  .hero-tagline {
+    margin-top: 1rem;
+    background: black;
+    color: var(--c-cream);
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.5rem;
+    box-shadow: 8px 8px 0px #fff;
+  }
+
+  .foreground-blur {
+    position: absolute;
+    bottom: -5rem;
+    left: -5rem;
+    width: 16rem;
+    height: 16rem;
+    background: black;
+    border-radius: 50%;
+    filter: blur(50px);
+    opacity: 0.2;
+  }
+
+  @media (min-width: 768px) {
+    .floating-icon {
+      font-size: 6rem;
+    }
+
+    .card-dice {
+      left: 15%;
+      width: 8rem;
+      height: 12rem;
+    }
+
+    .card-dice i {
+      font-size: 3rem;
+    }
+
+    .card-cat {
+      right: 15%;
+      width: 10rem;
+      height: 10rem;
+    }
+
+    .card-cat i {
+      font-size: 4rem;
+    }
+
+    .hero-content h1 {
+      font-size: 12vw;
+    }
+
+    .hero-tagline {
+      font-size: 0.75rem;
+    }
+  }
+
+  /* ============================================ */
+  /* SECTION 2: STORY - Mobile First */
+  /* ============================================ */
+  .story-wrapper {
+    overflow: hidden;
+    background: var(--c-dark);
+    color: var(--c-cream);
+  }
+
+  .story-track {
+    display: flex;
+    width: 300vw;
+    height: 100vh;
+  }
+
+  .story-panel {
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+  }
+
+  .panel-bg {
+    position: absolute;
+    inset: 0;
+    opacity: 0.2;
+    background-image: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1974&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(1);
+  }
+
+  .panel-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+  }
+
+  .panel-level {
+    color: var(--c-red);
+    margin-bottom: 1rem;
+    font-size: 0.5rem;
+  }
+
+  .panel-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .panel-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .panel-2 {
+    background: var(--c-red);
+    color: black;
+  }
+
+  .panel-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.1;
+    background-image: url('https://www.transparenttextures.com/patterns/diagmonds-light.png');
+  }
+
+  .panel-community {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .community-img {
+    width: 12rem;
+    height: 15rem;
+    object-fit: cover;
+    border: 4px solid black;
+    box-shadow: 15px 15px 0px #000;
+    transform: rotate(3deg);
+  }
+
+  .community-text {
+    max-width: 30rem;
+  }
+
+  .community-text .panel-level {
+    color: black;
+  }
+
+  .community-text p {
+    font-weight: bold;
+  }
+
+  .panel-3 {
+    background: var(--c-cream);
+    color: black;
+  }
+
+  .panel-philosophy {
+    text-align: center;
+  }
+
+  .philosophy-icon {
+    font-size: 4rem;
+    color: var(--c-red);
+    margin-bottom: 2rem;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+  }
+
+  .panel-philosophy h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .philosophy-tagline {
+    font-size: 0.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .story-panel {
+      padding: 2rem;
+    }
+
+    .panel-level {
+      font-size: 0.625rem;
+    }
+
+    .panel-content h2 {
+      font-size: 4rem;
+    }
+
+    .panel-content p {
+      font-size: 1.25rem;
+    }
+
+    .panel-community {
+      flex-direction: row;
+      gap: 3rem;
+    }
+
+    .community-img {
+      width: 16rem;
+      height: 20rem;
+    }
+
+    .philosophy-icon {
+      font-size: 5rem;
+    }
+
+    .panel-philosophy h2 {
+      font-size: 5rem;
+    }
+
+    .philosophy-tagline {
+      font-size: 0.75rem;
+    }
+  }
+
+  /* ============================================ */
+  /* SECTION 3: EXPERIENCE - Mobile First */
+  /* ============================================ */
+  .experience-section {
+    padding: 4rem 0;
+    background: var(--c-cream);
+    overflow: hidden;
+    min-height: 100vh;
+    position: relative;
+  }
+
+  .section-header {
+    margin-bottom: 3rem;
+    padding: 0 1rem;
+    position: relative;
+    z-index: 10;
+  }
+
+  .section-header h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: black;
+  }
+
+  .section-subtitle {
+    text-align: center;
+    font-family: var(--font-mono);
+    color: #666;
+    margin-top: 1rem;
+    font-size: 0.75rem;
+  }
+
+  .experience-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+
+  .experience-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .exp-item {
+    border: 4px solid black;
+    background: white;
+    padding: 0.5rem;
+    box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .exp-img {
+    aspect-ratio: 3/4;
+  }
+
+  .exp-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(1);
+    transition: filter 0.3s;
+  }
+
+  .exp-img:hover img {
+    filter: grayscale(0);
+  }
+
+  .exp-quote {
+    aspect-ratio: 1;
+    background: var(--c-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .exp-quote span {
+    color: white;
+    font-size: 0.5rem;
+    line-height: 1.8;
+  }
+
+  .exp-red {
+    background: var(--c-red);
+  }
+
+  .exp-red img {
+    mix-blend-mode: multiply;
+  }
+
+  .exp-icon {
+    aspect-ratio: 1;
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .exp-icon i {
+    font-size: 3rem;
+    color: var(--c-cream);
+  }
+
+  @media (min-width: 768px) {
+    .experience-section {
+      padding: 8rem 0;
+    }
+
+    .section-header h2 {
+      font-size: 4rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.875rem;
+    }
+
+    .experience-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      padding: 0 5rem;
+    }
+
+    .col-offset {
+      margin-top: -8rem;
+    }
+
+    .col-top {
+      margin-top: 5rem;
+    }
+
+    .exp-quote span {
+      font-size: 0.625rem;
+    }
+
+    .exp-icon i {
+      font-size: 4rem;
+    }
+  }
+
+  /* ============================================ */
+  /* SECTION 4: GAMES - Mobile First */
+  /* ============================================ */
+  .games-section {
+    padding: 4rem 1rem;
+    background: var(--c-dark);
+    color: var(--c-cream);
+    border-top: 4px solid white;
+  }
+
+  .games-header {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .games-header h2 {
+    font-size: 2.5rem;
+  }
+
+  .games-filters {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+  }
+
+  .filter-btn {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--c-cream);
+    background: transparent;
+    color: var(--c-cream);
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: var(--font-pixel);
+    font-size: 0.5rem;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .filter-btn:hover,
+  .filter-btn.active {
+    background: var(--c-cream);
+    color: black;
+  }
+
+  .games-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .game-item {
+    transition:
+      opacity 0.3s,
+      transform 0.3s;
+  }
+
+  .game-item.hidden {
+    opacity: 0;
+    transform: scale(0.8);
+    display: none;
+  }
+
+  .game-card {
+    position: relative;
+    aspect-ratio: 2/3;
+    background: #2a2a2a;
+    border: 2px solid var(--c-cream);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    transition:
+      transform 0.3s,
+      box-shadow 0.3s;
+  }
+
+  .game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 8px 8px 0px var(--c-dark);
+  }
+
+  .game-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+  }
+
+  .game-card:hover img {
+    opacity: 1;
+  }
+
+  .game-tag {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: black;
+    color: white;
+    font-size: 0.5rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .game-tag-party {
+    background: var(--c-red);
+  }
+
+  .game-tag-cats {
+    background: var(--c-gold);
+    color: black;
+  }
+
+  .game-card-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .game-card-cta i {
+    font-size: 2rem;
+  }
+
+  .game-card-cta span {
+    font-size: 0.5rem;
+  }
+
+  .game-item h3 {
+    font-size: 1.25rem;
+  }
+
+  .game-item p {
+    font-size: 0.75rem;
+    color: #999;
+    font-family: var(--font-mono);
+    margin-top: 0.25rem;
+  }
+
+  @media (min-width: 640px) {
+    .games-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 768px) {
+    .games-section {
+      padding: 8rem 1.5rem;
+    }
+
+    .games-header {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .games-header h2 {
+      font-size: 3.5rem;
+    }
+
+    .games-filters {
+      overflow-x: visible;
+    }
+
+    .filter-btn {
+      font-size: 0.625rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .games-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  /* ============================================ */
+  /* SECTION 5: VISIT - Mobile First */
+  /* ============================================ */
+  .visit-section {
+    padding: 4rem 1rem;
+    background: var(--c-gold);
+    color: black;
+    border-top: 4px solid black;
+  }
+
+  .visit-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .visit-info {
+    border: 4px solid black;
+    background: white;
+    padding: 2rem;
+    box-shadow: 15px 15px 0px #000;
+  }
+
+  .visit-info h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .info-items {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-family: var(--font-mono);
+  }
+
+  .info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .info-item i {
+    margin-top: 0.25rem;
+    color: var(--c-red);
+    font-size: 1.25rem;
+  }
+
+  .info-item strong {
+    display: block;
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .info-item p {
+    margin: 0.125rem 0;
+  }
+
+  .visit-map {
+    position: relative;
+    height: 20rem;
+    border: 4px solid black;
+    background: var(--c-blue);
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+
+  .map-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://www.transparenttextures.com/patterns/grid-me.png');
+    opacity: 0.3;
+  }
+
+  .map-icon-wrapper {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s;
+  }
+
+  .visit-map:hover .map-icon-wrapper {
+    transform: scale(1.1);
+  }
+
+  .map-icon-wrapper i {
+    font-size: 5rem;
+    color: white;
+    filter: drop-shadow(5px 5px 0px #000);
+  }
+
+  .map-cta {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    background: white;
+    border: 2px solid black;
+    padding: 0.75rem 1rem;
+    font-size: 0.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .visit-section {
+      padding: 6rem 1.5rem;
+    }
+
+    .visit-container {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4rem;
+    }
+
+    .visit-map {
+      height: 100%;
+      min-height: 20rem;
+    }
+
+    .map-cta {
+      font-size: 0.625rem;
+    }
+  }
+
+  /* ============================================ */
+  /* SECTION 6: COMMUNITY - Mobile First */
+  /* ============================================ */
+  .community-section {
+    padding: 4rem 1rem;
+    background: var(--c-dark);
+    text-align: center;
+  }
+
+  .community-icon {
+    font-size: 3rem;
+    color: var(--c-cream);
+    margin-bottom: 2rem;
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .community-section h2 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 2rem;
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .social-btn {
+    width: 4rem;
+    height: 4rem;
+    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    transition: transform 0.3s;
+    text-decoration: none;
+  }
+
+  .social-btn:hover {
+    transform: translateY(-5px);
+  }
+
+  .social-instagram {
+    background: var(--c-red);
+  }
+
+  .social-tiktok {
+    background: var(--c-blue);
+  }
+
+  .social-discord {
+    background: var(--c-gold);
+  }
+
+  .copyright {
+    font-size: 0.5rem;
+    color: #666;
+  }
+
+  @media (min-width: 768px) {
+    .community-section {
+      padding: 6rem 1.5rem;
+    }
+
+    .community-icon {
+      font-size: 4rem;
+    }
+
+    .community-section h2 {
+      font-size: 5rem;
+    }
+
+    .copyright {
+      font-size: 0.625rem;
+    }
+  }
+
+  /* ============================================ */
+  /* RUNNING PET */
+  /* ============================================ */
+  #running-pet-container {
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    z-index: 50;
+    opacity: 0;
+    transform-origin: bottom center;
+    pointer-events: none;
+  }
+</style>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // ===================================
+    // 1. HERO PARALLAX (Mouse Movement)
+    // ===================================
+    const heroSection = document.getElementById('hero');
+    if (heroSection && window.innerWidth >= 768) {
+      heroSection.addEventListener('mousemove', (e) => {
+        const x = e.clientX - window.innerWidth / 2;
+        const y = e.clientY - window.innerHeight / 2;
+
+        document.querySelectorAll('.parallax-layer').forEach((layer) => {
+          const speed = parseFloat(layer.getAttribute('data-speed') || '0');
+          gsap.to(layer, {
+            x: x * speed,
+            y: y * speed,
+            duration: 1,
+            ease: 'power2.out',
+          });
+        });
+      });
+    }
+
+    // ===================================
+    // 2. OUR STORY (Horizontal Scroll)
+    // ===================================
+    const track = document.getElementById('story-track');
+    const wrapper = document.getElementById('story-wrapper');
+
+    if (track && wrapper) {
+      const sections = gsap.utils.toArray('#story-track > div');
+
+      gsap.to(sections, {
+        xPercent: -100 * (sections.length - 1),
+        ease: 'none',
+        scrollTrigger: {
+          trigger: wrapper,
+          pin: true,
+          scrub: 1,
+          snap: 1 / (sections.length - 1),
+          end: () => '+=' + track.offsetWidth,
+        },
+      });
+    }
+
+    // ===================================
+    // 3. EXPERIENCE (Floating Gallery)
+    // ===================================
+    if (window.innerWidth >= 768) {
+      gsap.utils.toArray('.experience-col').forEach((col) => {
+        const speed = parseFloat(
+          (col as HTMLElement).getAttribute('data-speed') || '1'
+        );
+        gsap.to(col, {
+          y: -100 * speed,
+          scrollTrigger: {
+            trigger: '#experience',
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: 1,
+          },
+        });
+      });
+    }
+
+    // ===================================
+    // 4. GAME FILTERING
+    // ===================================
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const gameItems = document.querySelectorAll('.game-item');
+
+    filterButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+
+        // Update active state
+        filterButtons.forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // Filter items
+        if (filter === 'all') {
+          gameItems.forEach((item) => {
+            gsap.to(item, { opacity: 1, scale: 1, duration: 0.3 });
+            item.classList.remove('hidden');
+          });
+        } else {
+          gameItems.forEach((item) => {
+            if (item.classList.contains(filter as string)) {
+              gsap.to(item, { opacity: 1, scale: 1, duration: 0.3 });
+              item.classList.remove('hidden');
+            } else {
+              gsap.to(item, {
+                opacity: 0,
+                scale: 0.8,
+                duration: 0.3,
+                onComplete: () => item.classList.add('hidden'),
+              });
+            }
+          });
+        }
+      });
+    });
+
+    // ===================================
+    // 5. RUNNING PET (Supah Style Skew)
+    // ===================================
+    const petContainer = document.getElementById('running-pet-container');
+    const petSvg = document.getElementById('pet-svg');
+
+    if (petContainer && petSvg) {
+      // Initial fade in after hero
+      ScrollTrigger.create({
+        trigger: '#story-wrapper',
+        start: 'top center',
+        onEnter: () => gsap.to(petContainer, { opacity: 1, duration: 0.5 }),
+        onLeaveBack: () => gsap.to(petContainer, { opacity: 0, duration: 0.5 }),
+      });
+
+      // Skew/Stretch effect based on velocity
+      const proxy = { skew: 0 };
+      const skewSetter = gsap.quickSetter(petSvg, 'skewY', 'deg');
+      const scaleSetter = gsap.quickSetter(petSvg, 'scaleY');
+      const clamp = gsap.utils.clamp(-20, 20);
+
+      ScrollTrigger.create({
+        onUpdate: (self) => {
+          const velocity = self.getVelocity();
+          const skew = clamp(velocity / -100);
+
+          if (Math.abs(skew) > Math.abs(proxy.skew)) {
+            proxy.skew = skew;
+            gsap.to(proxy, {
+              skew: 0,
+              duration: 0.5,
+              ease: 'power3.out',
+              overwrite: true,
+              onUpdate: () => {
+                skewSetter(proxy.skew);
+                const s = 1 + Math.abs(proxy.skew) / 50;
+                scaleSetter(s);
+              },
+            });
+          }
+        },
+      });
+    }
+  });
+</script>
