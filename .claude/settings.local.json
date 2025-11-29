@@ -10,7 +10,10 @@
       "Bash(npm install:*)",
       "Bash(npx husky init)",
       "Bash(npm run build:*)",
-      "Bash(npm run format:*)"
+      "Bash(npm run format:*)",
+      "Bash(git -C /c/laragon/www/soulmad log --oneline)",
+      "Bash(npm run dev:*)",
+      "Bash(curl:*)"
     ],
     "deny": [],
     "ask": []
