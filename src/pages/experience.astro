@@ -542,19 +542,17 @@ import BaseLayout from '@layouts/BaseLayout.astro';
       end: '+=2000', // Pin for a while
       pin: true,
       scrub: true,
-      onUpdate: (self) => {
+      onUpdate: (_self) => {
         // Logic to fan out cards or cycle them
-        const progress = self.progress;
-        const totalCards = cards.length;
-        const step = 1 / totalCards;
-
-        cards.forEach((card: any, i) => {
-          // Simple fanning effect
-          // gsap.to(card, {
-          //    rotation: (i - totalCards/2) * 10 * progress,
-          //    x: (i - totalCards/2) * 50 * progress
-          // });
-        });
+        // Placeholder for future animation implementation
+        // const progress = self.progress;
+        // const totalCards = cards.length;
+        // cards.forEach((card, i) => {
+        //    gsap.to(card, {
+        //       rotation: (i - totalCards/2) * 10 * progress,
+        //       x: (i - totalCards/2) * 50 * progress
+        //    });
+        // });
       },
       animation: gsap
         .timeline()
