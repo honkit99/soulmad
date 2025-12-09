@@ -1382,10 +1382,9 @@ import BaseLayout from '@layouts/BaseLayout.astro';
     // ===================================
     if (window.innerWidth >= 768) {
       gsap.utils.toArray('.experience-col').forEach((col) => {
-        const speed = parseFloat(
-          (col as HTMLElement).getAttribute('data-speed') || '1'
-        );
-        gsap.to(col, {
+        const element = col as HTMLElement;
+        const speed = parseFloat(element.getAttribute('data-speed') || '1');
+        gsap.to(element, {
           y: -100 * speed,
           scrollTrigger: {
             trigger: '#experience',
